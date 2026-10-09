@@ -1,49 +1,64 @@
 /* ==========================================================================
-   Sparkle & Stitch Gallery — Boutique Luxury Design System
-   Color Palette: Warm Ivory, Soft Beige, Deep Burgundy, Charcoal, Muted Gold
+   Sparkle & Stitch Gallery — Editorial Fashion Boutique Design System
+   Palette: Warm Ivory, Soft Blush Pink, Deep Burgundy, Champagne Gold, Charcoal
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. CSS Custom Properties & Design Tokens
+   1. Design Tokens & CSS Custom Properties
    -------------------------------------------------------------------------- */
 :root {
+  /* Warm Ivory / Cream Backgrounds */
   --color-ivory: #FAF7F2;
-  --color-ivory-warm: #F4EFE6;
-  --color-beige: #E8DCCB;
-  --color-beige-light: #F6F1EA;
-  --color-burgundy: #651F35;
-  --color-burgundy-dark: #471323;
-  --color-burgundy-light: #832C47;
-  --color-gold: #B69A65;
-  --color-gold-dark: #937B4C;
-  --color-gold-light: #DFCEAC;
-  --color-gold-pale: #F8F4EC;
-  --color-charcoal: #292525;
-  --color-charcoal-light: #484140;
-  --color-gray-muted: #6B6462;
-  --color-gray-light: #F0ECE6;
+  --color-cream: #F8F4ED;
+  --color-ivory-warm: #F3ECE1;
   --color-white: #FFFFFF;
+
+  /* Soft Blush Pink Accents */
+  --color-blush: #F7ECEC;
+  --color-blush-tint: #FAF2F2;
+  --color-blush-border: #E8D4D4;
+  --color-blush-muted: #DDBDBD;
+
+  /* Deep Burgundy & Wine */
+  --color-burgundy: #5B192E;
+  --color-burgundy-dark: #3F0F1E;
+  --color-burgundy-rich: #651F35;
+  --color-burgundy-light: #7A243F;
+
+  /* Champagne Gold Accents */
+  --color-gold: #C5A880;
+  --color-gold-dark: #9E8159;
+  --color-gold-light: #E4D5BE;
+  --color-gold-pale: #FBF7F0;
+
+  /* Dark Charcoal & Muted Tones */
+  --color-charcoal: #242020;
+  --color-charcoal-light: #484241;
+  --color-gray-muted: #6E6866;
+  --color-gray-light: #F0EBE5;
+
+  /* Subtle Borders & Dividers */
+  --color-border: rgba(197, 168, 128, 0.28);
+  --color-border-subtle: rgba(36, 32, 32, 0.08);
+
+  /* Conversion WhatsApp */
   --color-whatsapp: #25D366;
   --color-whatsapp-dark: #1EBE5D;
-
-  --color-border: rgba(182, 154, 101, 0.28);
-  --color-border-subtle: rgba(41, 37, 37, 0.08);
 
   /* Typography */
   --font-serif: 'Cormorant Garamond', 'Playfair Display', Didot, Garamond, Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
-  /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(41, 37, 37, 0.04);
-  --shadow-md: 0 8px 24px rgba(41, 37, 37, 0.07);
-  --shadow-lg: 0 16px 40px rgba(41, 37, 37, 0.1);
-  --shadow-gold: 0 6px 20px rgba(182, 154, 101, 0.22);
-  --shadow-burgundy: 0 8px 24px rgba(101, 31, 53, 0.25);
+  /* Shadows (Restrained, Editorial) */
+  --shadow-sm: 0 2px 8px rgba(36, 32, 32, 0.04);
+  --shadow-md: 0 8px 24px rgba(36, 32, 32, 0.06);
+  --shadow-lg: 0 16px 40px rgba(36, 32, 32, 0.08);
+  --shadow-burgundy: 0 8px 24px rgba(91, 25, 46, 0.22);
 
   /* Radius */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 16px;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
   --radius-full: 9999px;
 
   /* Layout */
@@ -54,7 +69,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   2. Reset & Base Styles
+   2. Reset & Base Typography
    -------------------------------------------------------------------------- */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -73,7 +88,7 @@ body {
   font-family: var(--font-sans);
   background-color: var(--color-ivory);
   color: var(--color-charcoal);
-  line-height: 1.65;
+  line-height: 1.68;
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
@@ -136,40 +151,43 @@ ul, ol {
   padding-right: 24px;
 }
 
-/* Section Common Spacing */
+/* Section Spacing */
 .section {
-  padding-top: 96px;
-  padding-bottom: 96px;
+  padding-top: 104px;
+  padding-bottom: 104px;
   position: relative;
 }
 
 .section-alt {
-  background-color: var(--color-ivory-warm);
+  background-color: var(--color-cream);
+}
+
+.section-blush {
+  background-color: var(--color-blush-tint);
 }
 
 .section-burgundy {
-  background-color: var(--color-burgundy);
+  background-color: var(--color-burgundy-dark);
   color: var(--color-white);
 }
 
-/* Section Header Editorial Presentation */
+/* Editorial Section Header */
 .section-header {
   text-align: center;
-  max-width: 760px;
-  margin: 0 auto 56px auto;
+  max-width: 740px;
+  margin: 0 auto 60px auto;
 }
 
 .section-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-family: var(--font-sans);
+  gap: 12px;
   font-size: 0.8125rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-gold-dark);
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .section-burgundy .section-eyebrow {
@@ -180,16 +198,16 @@ ul, ol {
 .section-eyebrow::after {
   content: "";
   display: inline-block;
-  width: 24px;
+  width: 22px;
   height: 1px;
   background-color: var(--color-gold);
 }
 
 .section-title {
   font-family: var(--font-serif);
-  font-size: clamp(2.1rem, 4vw, 3.1rem);
+  font-size: clamp(2.2rem, 4.2vw, 3.2rem);
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.18;
   color: var(--color-burgundy);
   letter-spacing: -0.01em;
   margin-bottom: 16px;
@@ -202,26 +220,27 @@ ul, ol {
 .section-description {
   font-size: 1.0625rem;
   color: var(--color-gray-muted);
-  line-height: 1.7;
+  line-height: 1.72;
 }
 
 .section-burgundy .section-description {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.82);
 }
 
-/* Decorative Divider Ornament */
-.boutique-ornament {
+/* Thin Divider */
+.editorial-divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  margin: 18px 0 24px 0;
+  gap: 12px;
+  margin: 16px 0 22px 0;
   color: var(--color-gold);
+  font-size: 0.85rem;
 }
-.boutique-ornament::before,
-.boutique-ornament::after {
+.editorial-divider::before,
+.editorial-divider::after {
   content: "";
-  width: 48px;
+  width: 44px;
   height: 1px;
   background-color: var(--color-border);
 }
@@ -243,7 +262,6 @@ ul, ol {
   transition: all var(--transition-normal);
   cursor: pointer;
   position: relative;
-  overflow: hidden;
   line-height: 1;
 }
 
@@ -266,7 +284,7 @@ ul, ol {
   border: 1px solid var(--color-burgundy);
 }
 .btn-secondary:hover, .btn-secondary:focus-visible {
-  background-color: rgba(101, 31, 53, 0.06);
+  background-color: rgba(91, 25, 46, 0.05);
   color: var(--color-burgundy-dark);
   transform: translateY(-2px);
 }
@@ -279,25 +297,24 @@ ul, ol {
 .btn-gold:hover, .btn-gold:focus-visible {
   background-color: var(--color-gold-dark);
   border-color: var(--color-gold-dark);
-  box-shadow: var(--shadow-gold);
   transform: translateY(-2px);
 }
 
 .btn-whatsapp {
-  background-color: #25D366;
+  background-color: var(--color-whatsapp);
   color: var(--color-white);
-  border: 1px solid #20BD5A;
+  border: 1px solid var(--color-whatsapp-dark);
 }
 .btn-whatsapp:hover, .btn-whatsapp:focus-visible {
-  background-color: #1EBE5D;
-  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3);
+  background-color: var(--color-whatsapp-dark);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.28);
   transform: translateY(-2px);
 }
 
 .btn-outline-white {
   background-color: transparent;
   color: var(--color-white);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.45);
 }
 .btn-outline-white:hover, .btn-outline-white:focus-visible {
   background-color: var(--color-white);
@@ -311,14 +328,14 @@ ul, ol {
 }
 
 .btn-icon {
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
   flex-shrink: 0;
   fill: currentColor;
 }
 
 /* --------------------------------------------------------------------------
-   4. Site Header & Navigation
+   4. Header & Navigation
    -------------------------------------------------------------------------- */
 .site-header {
   position: sticky;
@@ -326,9 +343,9 @@ ul, ol {
   left: 0;
   width: 100%;
   height: var(--header-height);
-  background-color: rgba(250, 247, 242, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(250, 247, 242, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border);
   z-index: 1000;
   transition: background-color var(--transition-normal), box-shadow var(--transition-normal);
@@ -346,7 +363,6 @@ ul, ol {
   height: 100%;
 }
 
-/* Brand Logo */
 .brand-link {
   display: flex;
   align-items: center;
@@ -355,12 +371,11 @@ ul, ol {
 }
 
 .brand-logo-img {
-  width: 52px;
-  height: 52px;
+  width: 50px;
+  height: 50px;
   border-radius: var(--radius-sm);
   object-fit: cover;
   border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-sm);
 }
 
 .brand-text {
@@ -370,14 +385,14 @@ ul, ol {
 
 .brand-title {
   font-family: var(--font-serif);
-  font-size: 1.375rem;
+  font-size: 1.35rem;
   font-weight: 600;
   color: var(--color-burgundy);
   letter-spacing: 0.02em;
   line-height: 1.15;
 }
 
-.brand-subtitle {
+.brand-tagline-sub {
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -385,7 +400,6 @@ ul, ol {
   font-weight: 600;
 }
 
-/* Desktop Navigation Menu */
 .desktop-nav {
   display: none;
 }
@@ -394,14 +408,14 @@ ul, ol {
   .desktop-nav {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 28px;
   }
 }
 
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 26px;
 }
 
 .nav-item-link {
@@ -438,10 +452,9 @@ ul, ol {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
-/* Mobile Hamburger Toggle */
 .mobile-toggle {
   display: flex;
   flex-direction: column;
@@ -452,7 +465,6 @@ ul, ol {
   padding: 10px;
   cursor: pointer;
   border-radius: var(--radius-sm);
-  transition: background-color var(--transition-fast);
 }
 
 @media (min-width: 992px) {
@@ -479,7 +491,6 @@ ul, ol {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Mobile Navigation Drawer */
 .mobile-drawer {
   position: fixed;
   top: var(--header-height);
@@ -505,7 +516,7 @@ ul, ol {
 .mobile-nav-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
 }
 
 .mobile-nav-link {
@@ -514,35 +525,35 @@ ul, ol {
   color: var(--color-charcoal);
   font-weight: 500;
   display: block;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
   border-bottom: 1px solid var(--color-border-subtle);
 }
 
 .mobile-nav-link:hover,
 .mobile-nav-link.active {
   color: var(--color-burgundy);
-  padding-left: 8px;
+  padding-left: 6px;
 }
 
 .mobile-drawer-footer {
   margin-top: 36px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 /* --------------------------------------------------------------------------
-   5. Hero Section
+   5. Hero Section (Editorial Asymmetric Layout)
    -------------------------------------------------------------------------- */
-.hero-section {
-  padding-top: 50px;
-  padding-bottom: 80px;
-  background: radial-gradient(circle at 80% 20%, rgba(232, 220, 203, 0.45) 0%, rgba(250, 247, 242, 1) 70%);
+.hero-editorial {
+  padding-top: 56px;
+  padding-bottom: 84px;
+  background: linear-gradient(135deg, #FAF7F2 0%, #F8F4ED 60%, #F5ECEC 100%);
   position: relative;
   overflow: hidden;
 }
 
-.hero-grid {
+.hero-editorial-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 48px;
@@ -550,131 +561,98 @@ ul, ol {
 }
 
 @media (min-width: 992px) {
-  .hero-grid {
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 60px;
+  .hero-editorial-grid {
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 64px;
   }
 }
 
-.hero-content {
+.hero-editorial-content {
   max-width: 620px;
 }
 
-.hero-eyebrow {
+.hero-location-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-size: 0.8125rem;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-gold-dark);
   font-weight: 700;
   margin-bottom: 18px;
-  background: rgba(182, 154, 101, 0.12);
+  background: var(--color-blush);
+  border: 1px solid var(--color-blush-border);
   padding: 6px 14px;
   border-radius: var(--radius-full);
 }
 
-.hero-eyebrow-dot {
-  width: 7px;
-  height: 7px;
+.hero-location-dot {
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background-color: var(--color-burgundy);
 }
 
-.hero-title {
+.hero-headline {
   font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  font-size: clamp(2.6rem, 5.2vw, 4rem);
   font-weight: 500;
-  line-height: 1.15;
+  line-height: 1.14;
   color: var(--color-burgundy);
   letter-spacing: -0.015em;
   margin-bottom: 22px;
 }
 
-.hero-title-italic {
+.hero-headline-italic {
   font-style: italic;
   font-weight: 400;
   color: var(--color-gold-dark);
 }
 
-.hero-subtitle {
+.hero-supporting-text {
   font-size: 1.125rem;
   color: var(--color-charcoal-light);
-  line-height: 1.75;
+  line-height: 1.76;
   margin-bottom: 36px;
 }
 
-.hero-actions {
+.hero-cta-group {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
   margin-bottom: 44px;
 }
 
-.hero-highlights {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding-top: 24px;
-  border-top: 1px solid var(--color-border);
-}
-
-@media (min-width: 576px) {
-  .hero-highlights {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.highlight-item {
-  display: flex;
-  flex-direction: column;
-}
-
-.highlight-label {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--color-burgundy);
-  line-height: 1.2;
-}
-
-.highlight-sub {
-  font-size: 0.78rem;
-  color: var(--color-gray-muted);
-  margin-top: 2px;
-}
-
-/* Hero Media Display */
-.hero-media-wrapper {
+.hero-editorial-media {
   position: relative;
 }
 
-.hero-image-frame {
+.hero-editorial-frame {
   position: relative;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--color-border);
   aspect-ratio: 16 / 11;
-  background-color: var(--color-beige);
+  background-color: var(--color-cream);
 }
 
-.hero-image {
+.hero-editorial-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.8s ease;
 }
 
-.hero-image-frame:hover .hero-image {
+.hero-editorial-frame:hover .hero-editorial-img {
   transform: scale(1.03);
 }
 
-.hero-floating-badge {
+.hero-caption-card {
   position: absolute;
-  bottom: 24px;
-  left: -20px;
+  bottom: 20px;
+  left: -18px;
   background: var(--color-white);
   padding: 16px 20px;
   border-radius: var(--radius-sm);
@@ -683,45 +661,45 @@ ul, ol {
   display: flex;
   align-items: center;
   gap: 14px;
-  max-width: 260px;
+  max-width: 270px;
 }
 
 @media (max-width: 768px) {
-  .hero-floating-badge {
+  .hero-caption-card {
     left: 12px;
     bottom: 12px;
     padding: 10px 14px;
   }
 }
 
-.floating-badge-icon {
+.hero-caption-icon {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background-color: var(--color-gold-pale);
-  color: var(--color-gold-dark);
+  background-color: var(--color-blush);
+  color: var(--color-burgundy);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 
-.floating-badge-title {
-  font-size: 0.84rem;
+.hero-caption-title {
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--color-burgundy);
   line-height: 1.2;
 }
 
-.floating-badge-desc {
+.hero-caption-sub {
   font-size: 0.72rem;
   color: var(--color-gray-muted);
 }
 
 /* --------------------------------------------------------------------------
-   6. About Section
+   6. Brand Introduction (Crafted with Care. Created for You.)
    -------------------------------------------------------------------------- */
-.about-grid {
+.intro-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 48px;
@@ -729,35 +707,35 @@ ul, ol {
 }
 
 @media (min-width: 992px) {
-  .about-grid {
-    grid-template-columns: 0.9fr 1.1fr;
+  .intro-grid {
+    grid-template-columns: 0.95fr 1.05fr;
     gap: 64px;
   }
 }
 
-.about-visual {
+.intro-media-box {
   position: relative;
 }
 
-.about-card-portrait {
-  border-radius: var(--radius-md);
+.intro-portrait-frame {
+  border-radius: var(--radius-sm);
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-md);
   border: 1px solid var(--color-border);
   aspect-ratio: 4 / 5;
-  background-color: var(--color-beige);
+  background-color: var(--color-cream);
 }
 
-.about-card-portrait img {
+.intro-portrait-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.about-badge-card {
+.intro-tag-box {
   position: absolute;
   top: 24px;
-  right: -24px;
+  right: -20px;
   background: var(--color-burgundy);
   color: var(--color-white);
   padding: 18px 24px;
@@ -767,79 +745,79 @@ ul, ol {
 }
 
 @media (max-width: 768px) {
-  .about-badge-card {
-    right: 12px;
-    top: 12px;
-    padding: 12px 18px;
+  .intro-tag-box {
+    right: 10px;
+    top: 10px;
+    padding: 10px 16px;
   }
 }
 
-.about-badge-num {
+.intro-tag-title {
   font-family: var(--font-serif);
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 1;
   color: var(--color-gold-light);
   font-weight: 600;
 }
 
-.about-badge-text {
+.intro-tag-desc {
   font-size: 0.75rem;
-  text-transform: uppercase;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
   margin-top: 4px;
 }
 
-.about-text p {
+.intro-text p {
   margin-bottom: 20px;
   font-size: 1.0625rem;
   line-height: 1.8;
   color: var(--color-charcoal-light);
 }
 
-.about-features {
+.intro-pillars {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 18px;
+  gap: 16px;
   margin: 32px 0;
 }
 
 @media (min-width: 576px) {
-  .about-features {
+  .intro-pillars {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.about-feature-box {
+.pillar-box {
   display: flex;
   gap: 14px;
   align-items: flex-start;
-  padding: 16px;
+  padding: 16px 18px;
   background: var(--color-white);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-sm);
   transition: border-color var(--transition-fast);
 }
 
-.about-feature-box:hover {
+.pillar-box:hover {
   border-color: var(--color-gold);
 }
 
-.about-feature-icon {
-  width: 24px;
-  height: 24px;
+.pillar-icon {
+  width: 22px;
+  height: 22px;
   color: var(--color-burgundy);
   flex-shrink: 0;
   margin-top: 2px;
 }
 
-.about-feature-title {
+.pillar-title {
   font-family: var(--font-serif);
-  font-size: 1.125rem;
+  font-size: 1.15rem;
   color: var(--color-burgundy);
   font-weight: 600;
 }
 
-.about-feature-desc {
+.pillar-desc {
   font-size: 0.8125rem;
   color: var(--color-gray-muted);
   line-height: 1.5;
@@ -847,27 +825,27 @@ ul, ol {
 }
 
 /* --------------------------------------------------------------------------
-   7. Collections Section
+   7. Collections (Find Your Signature Style)
    -------------------------------------------------------------------------- */
-.collections-grid {
+.collections-editorial-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 32px;
 }
 
 @media (min-width: 640px) {
-  .collections-grid {
+  .collections-editorial-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1024px) {
-  .collections-grid {
+  .collections-editorial-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.collection-card {
+.collection-tile {
   background: var(--color-white);
   border-radius: var(--radius-sm);
   overflow: hidden;
@@ -878,63 +856,63 @@ ul, ol {
   transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
 }
 
-.collection-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+.collection-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
   border-color: var(--color-gold);
 }
 
-.collection-media {
+.collection-tile-media {
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background-color: var(--color-beige-light);
+  background-color: var(--color-cream);
 }
 
-.collection-img {
+.collection-tile-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s ease;
 }
 
-.collection-card:hover .collection-img {
+.collection-tile:hover .collection-tile-img {
   transform: scale(1.05);
 }
 
-.collection-badge {
+.collection-tile-badge {
   position: absolute;
   top: 14px;
   left: 14px;
   background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(4px);
   color: var(--color-burgundy);
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 6px 12px;
+  letter-spacing: 0.08em;
+  padding: 5px 12px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--color-border);
 }
 
-.collection-body {
+.collection-tile-body {
   padding: 24px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-.collection-title {
+.collection-tile-title {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   color: var(--color-burgundy);
   font-weight: 600;
   line-height: 1.25;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
-.collection-desc {
+.collection-tile-desc {
   font-size: 0.9rem;
   color: var(--color-gray-muted);
   line-height: 1.6;
@@ -942,155 +920,120 @@ ul, ol {
   flex-grow: 1;
 }
 
-.collection-footer {
+.collection-tile-action {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
   padding-top: 16px;
   border-top: 1px solid var(--color-border-subtle);
 }
 
 /* --------------------------------------------------------------------------
-   8. Custom Stitching Services Section
+   8. Hand Embroidery & Creative Work (The Beauty Is in the Details.)
    -------------------------------------------------------------------------- */
-.services-grid {
+.embroidery-showcase {
+  background: linear-gradient(to bottom, var(--color-ivory), var(--color-blush-tint));
+}
+
+.embroidery-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 28px;
-}
-
-@media (min-width: 640px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.service-card {
-  background: var(--color-white);
-  border-radius: var(--radius-sm);
-  padding: 28px;
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-sm);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  transition: all var(--transition-normal);
-}
-
-.service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--color-gold);
-}
-
-.service-icon-box {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-sm);
-  background-color: var(--color-gold-pale);
-  color: var(--color-burgundy);
-  display: flex;
+  gap: 48px;
   align-items: center;
-  justify-content: center;
+}
+
+@media (min-width: 992px) {
+  .embroidery-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 60px;
+  }
+}
+
+.embroidery-media-frame {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  aspect-ratio: 4 / 3;
+  background-color: var(--color-cream);
+}
+
+.embroidery-media-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.embroidery-media-frame:hover img {
+  transform: scale(1.04);
+}
+
+.embroidery-card-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(91, 25, 46, 0.94);
+  color: var(--color-gold-light);
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+
+.embroidery-text p {
+  font-size: 1.0625rem;
+  line-height: 1.78;
+  color: var(--color-charcoal-light);
   margin-bottom: 20px;
 }
 
-.service-icon-box svg {
-  width: 24px;
-  height: 24px;
+.embroidery-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 28px 0;
 }
 
-.service-title {
-  font-family: var(--font-serif);
-  font-size: 1.35rem;
-  color: var(--color-burgundy);
-  font-weight: 600;
-  margin-bottom: 10px;
-  line-height: 1.3;
-}
-
-.service-desc {
-  font-size: 0.9rem;
-  color: var(--color-gray-muted);
-  line-height: 1.6;
-  margin-bottom: 22px;
-  flex-grow: 1;
-}
-
-.service-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--color-burgundy);
-  transition: gap var(--transition-fast), color var(--transition-fast);
-}
-
-.service-link:hover {
-  color: var(--color-gold-dark);
+.embroidery-detail-item {
+  display: flex;
+  align-items: flex-start;
   gap: 12px;
 }
 
-/* Service Consultation Callout Box */
-.service-callout {
-  margin-top: 56px;
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 36px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 20px;
-  box-shadow: var(--shadow-md);
+.embroidery-detail-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-gold);
+  margin-top: 8px;
+  flex-shrink: 0;
 }
 
-@media (min-width: 768px) {
-  .service-callout {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-  }
-}
-
-.service-callout-text h3 {
-  font-family: var(--font-serif);
-  font-size: 1.65rem;
+.embroidery-detail-title {
+  font-weight: 600;
   color: var(--color-burgundy);
-  margin-bottom: 6px;
-}
-
-.service-callout-text p {
-  color: var(--color-gray-muted);
-  font-size: 0.95rem;
 }
 
 /* --------------------------------------------------------------------------
-   9. Visual Lookbook & Gallery Section
+   9. Our Work & Fashion Gallery (A Gallery of Ideas & Creations)
    -------------------------------------------------------------------------- */
 .gallery-filters {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   margin-bottom: 40px;
 }
 
 .gallery-filter-btn {
-  padding: 10px 20px;
+  padding: 9px 18px;
   border-radius: var(--radius-full);
   font-size: 0.84rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   background: var(--color-white);
   color: var(--color-charcoal);
   border: 1px solid var(--color-border);
@@ -1102,24 +1045,23 @@ ul, ol {
   background: var(--color-burgundy);
   color: var(--color-white);
   border-color: var(--color-burgundy);
-  box-shadow: var(--shadow-sm);
 }
 
-.gallery-grid {
+.gallery-editorial-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 22px;
 }
 
 @media (min-width: 576px) {
-  .gallery-grid {
+  .gallery-editorial-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 992px) {
-  .gallery-grid {
-    grid-template-columns: repeat(4, 1fr);
+  .gallery-editorial-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -1129,8 +1071,7 @@ ul, ol {
   border-radius: var(--radius-sm);
   overflow: hidden;
   border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-sm);
-  background: var(--color-beige-light);
+  background: var(--color-cream);
   cursor: pointer;
   transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
@@ -1154,7 +1095,7 @@ ul, ol {
 .gallery-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(71, 19, 35, 0.92) 0%, rgba(71, 19, 35, 0.2) 60%, transparent 100%);
+  background: linear-gradient(to top, rgba(63, 15, 30, 0.94) 0%, rgba(63, 15, 30, 0.25) 60%, transparent 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1181,19 +1122,14 @@ ul, ol {
   font-size: 1.15rem;
   color: var(--color-white);
   line-height: 1.25;
-  margin: 4px 0 12px 0;
-}
-
-.gallery-item-actions {
-  display: flex;
-  gap: 8px;
+  margin: 4px 0 10px 0;
 }
 
 /* Lightbox Modal */
 .lightbox-modal {
   position: fixed;
   inset: 0;
-  background: rgba(41, 37, 37, 0.94);
+  background: rgba(36, 32, 32, 0.94);
   backdrop-filter: blur(8px);
   z-index: 2000;
   display: none;
@@ -1214,7 +1150,7 @@ ul, ol {
   display: flex;
   flex-direction: column;
   background: var(--color-white);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--color-border);
@@ -1234,7 +1170,6 @@ ul, ol {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  position: relative;
 }
 
 .lightbox-media img {
@@ -1266,7 +1201,6 @@ ul, ol {
   justify-content: center;
   cursor: pointer;
   z-index: 10;
-  box-shadow: var(--shadow-sm);
   transition: all var(--transition-fast);
 }
 
@@ -1301,156 +1235,127 @@ ul, ol {
 .lightbox-next-btn { right: 14px; }
 
 /* --------------------------------------------------------------------------
-   10. Customer Reviews Section
+   10. Services Section (Designed Around Your Vision)
    -------------------------------------------------------------------------- */
-.reviews-container {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.reviews-badge-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  background: var(--color-white);
-  padding: 16px 28px;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-sm);
-  max-width: fit-content;
-  margin: 0 auto;
-}
-
-.google-g-icon {
-  width: 22px;
-  height: 22px;
-}
-
-.reviews-badge-text {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--color-charcoal);
-}
-
-.reviews-grid {
+.services-editorial-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 28px;
+  gap: 24px;
 }
 
-@media (min-width: 768px) {
-  .reviews-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.review-card {
-  background: var(--color-white);
-  border-radius: var(--radius-md);
-  padding: 32px 28px;
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-sm);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  transition: all var(--transition-normal);
-}
-
-.review-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--color-gold);
-}
-
-.review-quote-mark {
-  font-family: var(--font-serif);
-  font-size: 3.5rem;
-  line-height: 1;
-  color: var(--color-gold-light);
-  margin-bottom: -10px;
-}
-
-.review-text {
-  font-size: 1.05rem;
-  font-style: italic;
-  color: var(--color-charcoal);
-  line-height: 1.7;
-  margin-bottom: 24px;
-}
-
-.review-author-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 18px;
-  border-top: 1px solid var(--color-border-subtle);
-}
-
-.review-author-name {
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
-  color: var(--color-burgundy);
-  font-weight: 600;
-}
-
-.review-verified-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.72rem;
-  color: var(--color-gold-dark);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.reviews-cta-wrap {
-  text-align: center;
-  margin-top: 20px;
-}
-
-/* --------------------------------------------------------------------------
-   11. How It Works Section
-   -------------------------------------------------------------------------- */
-.process-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 28px;
-  position: relative;
-}
-
-@media (min-width: 576px) {
-  .process-grid {
+@media (min-width: 640px) {
+  .services-editorial-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1024px) {
-  .process-grid {
+  .services-editorial-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.service-card-editorial {
+  background: var(--color-white);
+  border-radius: var(--radius-sm);
+  padding: 30px;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+.service-card-editorial:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-gold);
+}
+
+.service-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-blush);
+  color: var(--color-burgundy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.service-card-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.service-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--color-burgundy);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.service-card-desc {
+  font-size: 0.9rem;
+  color: var(--color-gray-muted);
+  line-height: 1.6;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+
+.service-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-burgundy);
+  transition: gap var(--transition-fast);
+}
+
+.service-card-link:hover {
+  gap: 12px;
+  color: var(--color-gold-dark);
+}
+
+/* --------------------------------------------------------------------------
+   11. Our Process (From Your Idea to Your Outfit)
+   -------------------------------------------------------------------------- */
+.process-editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 576px) {
+  .process-editorial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .process-editorial-grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-.process-card {
+.process-step-box {
   background: var(--color-white);
   border-radius: var(--radius-sm);
   padding: 32px 24px;
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-sm);
-  position: relative;
   transition: all var(--transition-normal);
 }
 
-.process-card:hover {
+.process-step-box:hover {
   transform: translateY(-4px);
   border-color: var(--color-gold);
-  box-shadow: var(--shadow-md);
 }
 
-.process-num {
+.process-step-num {
   font-family: var(--font-serif);
   font-size: 2.2rem;
   font-weight: 600;
@@ -1459,129 +1364,174 @@ ul, ol {
   margin-bottom: 16px;
 }
 
-.process-title {
+.process-step-title {
   font-family: var(--font-serif);
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   color: var(--color-burgundy);
   font-weight: 600;
   margin-bottom: 10px;
 }
 
-.process-desc {
+.process-step-desc {
   font-size: 0.88rem;
   color: var(--color-gray-muted);
   line-height: 1.6;
 }
 
 /* --------------------------------------------------------------------------
-   12. FAQ Accordion Section
+   12. Trust & Customer Reviews (Experiences That Matter)
    -------------------------------------------------------------------------- */
-.faq-list {
-  max-width: 820px;
-  margin: 0 auto;
+.reviews-grid-editorial {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 26px;
+}
+
+@media (min-width: 768px) {
+  .reviews-grid-editorial {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.review-card-editorial {
+  background: var(--color-white);
+  border-radius: var(--radius-sm);
+  padding: 32px 26px;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  justify-content: space-between;
+  transition: all var(--transition-normal);
 }
 
-.faq-item {
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: border-color var(--transition-fast);
-}
-
-.faq-item:hover {
+.review-card-editorial:hover {
+  transform: translateY(-3px);
   border-color: var(--color-gold);
 }
 
-.faq-button {
-  width: 100%;
-  padding: 22px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  text-align: left;
+.review-editorial-quote {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--color-burgundy);
-  cursor: pointer;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--color-gold-light);
+  margin-bottom: -10px;
 }
 
-.faq-chevron {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  color: var(--color-gold-dark);
-  transition: transform var(--transition-normal);
-}
-
-.faq-button[aria-expanded="true"] .faq-chevron {
-  transform: rotate(180deg);
-}
-
-.faq-content {
-  padding: 0 24px 22px 24px;
-  display: none;
-  font-size: 0.95rem;
-  color: var(--color-charcoal-light);
+.review-editorial-text {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--color-charcoal);
   line-height: 1.7;
-  border-top: 1px dashed var(--color-border-subtle);
-  padding-top: 16px;
+  margin-bottom: 24px;
 }
 
-.faq-content.open {
-  display: block;
+.review-editorial-author {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--color-burgundy);
+  font-weight: 600;
+}
+
+.review-editorial-source {
+  font-size: 0.72rem;
+  color: var(--color-gold-dark);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* --------------------------------------------------------------------------
-   13. Contact & Location Section
+   13. Instagram Inspiration Section
    -------------------------------------------------------------------------- */
-.contact-grid {
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .insta-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+.insta-tile {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  display: block;
+}
+
+.insta-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.insta-tile:hover img {
+  transform: scale(1.06);
+}
+
+.insta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(91, 25, 46, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.insta-tile:hover .insta-overlay {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   14. Contact & WhatsApp Enquiry Builder (Validated)
+   -------------------------------------------------------------------------- */
+.contact-editorial-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 48px;
 }
 
 @media (min-width: 992px) {
-  .contact-grid {
-    grid-template-columns: 1fr 1fr;
+  .contact-editorial-grid {
+    grid-template-columns: 0.95fr 1.05fr;
     gap: 60px;
   }
 }
 
-.contact-info-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-
-.contact-card-box {
+.contact-card-editorial {
   background: var(--color-white);
   border-radius: var(--radius-sm);
-  padding: 28px;
+  padding: 32px;
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-sm);
 }
 
-.contact-detail-row {
+.contact-row-item {
   display: flex;
   gap: 16px;
   margin-bottom: 24px;
 }
-.contact-detail-row:last-child {
+.contact-row-item:last-child {
   margin-bottom: 0;
 }
 
-.contact-icon-bubble {
-  width: 44px;
-  height: 44px;
+.contact-bubble {
+  width: 42px;
+  height: 42px;
   border-radius: var(--radius-sm);
-  background-color: var(--color-gold-pale);
+  background-color: var(--color-blush);
   color: var(--color-burgundy);
   display: flex;
   align-items: center;
@@ -1589,7 +1539,7 @@ ul, ol {
   flex-shrink: 0;
 }
 
-.contact-detail-title {
+.contact-label-small {
   font-size: 0.8125rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -1598,49 +1548,27 @@ ul, ol {
   margin-bottom: 4px;
 }
 
-.contact-detail-value {
+.contact-value-text {
   font-size: 1rem;
   color: var(--color-charcoal);
   font-weight: 500;
   line-height: 1.5;
 }
 
-.contact-actions-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 24px;
-  padding-top: 20px;
-  border-top: 1px solid var(--color-border-subtle);
-}
-
-/* Custom Outfit Requirement Builder Form */
-.enquiry-builder-card {
+/* Custom Outfit Enquiry Form */
+.enquiry-form-card {
   background: var(--color-white);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   padding: 36px;
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-md);
 }
 
-.enquiry-builder-title {
-  font-family: var(--font-serif);
-  font-size: 1.75rem;
-  color: var(--color-burgundy);
-  margin-bottom: 8px;
-}
-
-.enquiry-builder-desc {
-  font-size: 0.9rem;
-  color: var(--color-gray-muted);
-  margin-bottom: 24px;
-}
-
-.form-group {
+.form-group-editorial {
   margin-bottom: 18px;
 }
 
-.form-label {
+.form-label-editorial {
   display: block;
   font-size: 0.85rem;
   font-weight: 600;
@@ -1648,7 +1576,7 @@ ul, ol {
   margin-bottom: 6px;
 }
 
-.form-control {
+.form-input-editorial {
   width: 100%;
   padding: 12px 14px;
   border: 1px solid var(--color-border);
@@ -1659,43 +1587,48 @@ ul, ol {
   transition: border-color var(--transition-fast), background-color var(--transition-fast);
 }
 
-.form-control:focus {
+.form-input-editorial:focus {
   outline: none;
   border-color: var(--color-burgundy);
   background: var(--color-white);
 }
 
-textarea.form-control {
+.form-input-editorial.has-error {
+  border-color: #D32F2F;
+  background-color: #FFF8F8;
+}
+
+.form-error-msg {
+  display: none;
+  font-size: 0.78rem;
+  color: #D32F2F;
+  margin-top: 4px;
+}
+.form-error-msg.visible {
+  display: block;
+}
+
+textarea.form-input-editorial {
   resize: vertical;
-  min-height: 90px;
+  min-height: 84px;
 }
 
-/* Map Frame */
-.map-frame-wrapper {
-  margin-top: 48px;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-md);
-  height: 380px;
-  background-color: var(--color-beige);
-}
-
-.map-frame-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
+.form-transparency-note {
+  font-size: 0.8rem;
+  color: var(--color-gray-muted);
+  margin-top: 12px;
+  text-align: center;
 }
 
 /* --------------------------------------------------------------------------
-   14. Site Footer
+   15. Site Footer
    -------------------------------------------------------------------------- */
 .site-footer {
   background-color: var(--color-burgundy-dark);
   color: var(--color-white);
   padding-top: 80px;
-  padding-bottom: 110px; /* spacing for mobile sticky bar */
-  border-top: 1px solid rgba(182, 154, 101, 0.3);
+  padding-bottom: 110px;
+  border-top: 1px solid rgba(197, 168, 128, 0.3);
 }
 
 @media (min-width: 768px) {
@@ -1704,7 +1637,7 @@ textarea.form-control {
   }
 }
 
-.footer-grid {
+.footer-grid-editorial {
   display: grid;
   grid-template-columns: 1fr;
   gap: 48px;
@@ -1712,13 +1645,13 @@ textarea.form-control {
 }
 
 @media (min-width: 576px) {
-  .footer-grid {
+  .footer-grid-editorial {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 992px) {
-  .footer-grid {
+  .footer-grid-editorial {
     grid-template-columns: 1.3fr 0.9fr 0.9fr 1fr;
   }
 }
@@ -1727,7 +1660,15 @@ textarea.form-control {
   font-family: var(--font-serif);
   font-size: 1.6rem;
   color: var(--color-gold-light);
-  margin-bottom: 12px;
+  margin-bottom: 6px;
+}
+
+.footer-brand-tagline {
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 14px;
 }
 
 .footer-brand-desc {
@@ -1794,7 +1735,7 @@ textarea.form-control {
 }
 
 /* --------------------------------------------------------------------------
-   15. Sticky Mobile Action Bar
+   16. Sticky Mobile Action Bar
    -------------------------------------------------------------------------- */
 .mobile-sticky-bar {
   position: fixed;
@@ -1803,7 +1744,7 @@ textarea.form-control {
   width: 100%;
   background: var(--color-white);
   border-top: 1px solid var(--color-border);
-  box-shadow: 0 -4px 16px rgba(41, 37, 37, 0.08);
+  box-shadow: 0 -4px 16px rgba(36, 32, 32, 0.08);
   padding: 10px 16px;
   display: flex;
   align-items: center;
@@ -1837,12 +1778,12 @@ textarea.form-control {
 }
 
 .mobile-sticky-wa {
-  background-color: #25D366;
+  background-color: var(--color-whatsapp);
   color: var(--color-white);
 }
 
 /* --------------------------------------------------------------------------
-   16. Accessibility & Reduced Motion
+   17. Accessibility & Reduced Motion
    -------------------------------------------------------------------------- */
 :focus-visible {
   outline: 2px solid var(--color-burgundy);

@@ -1,13 +1,12 @@
 /**
- * Sparkle & Stitch Gallery — Main Interactive JavaScript
+ * Sparkle & Stitch Gallery — Editorial Interactive JavaScript
  * Modular ES script managing navigation, mobile drawer, gallery filter,
- * lightbox modal, FAQ accordion, and WhatsApp enquiry builder.
+ * lightbox modal, form validation, and WhatsApp enquiry compiler.
  */
 
 import {
   BUSINESS_CONFIG,
-  getWhatsAppUrl,
-  GALLERY_ITEMS
+  getWhatsAppUrl
 } from './config.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -181,7 +180,6 @@ function initGalleryFilterAndLightbox() {
   };
 
   const openLightbox = (index) => {
-    // Get visible items based on current active filter
     activeItemsList = Array.from(galleryItems).filter(item => item.style.display !== 'none');
     if (!activeItemsList.length) activeItemsList = Array.from(galleryItems);
 
@@ -251,7 +249,6 @@ function initFaqAccordion() {
       const targetId = btn.getAttribute('aria-controls');
       const content = document.getElementById(targetId);
 
-      // Close all other accordions for clean boutique presentation
       faqButtons.forEach(otherBtn => {
         if (otherBtn !== btn) {
           otherBtn.setAttribute('aria-expanded', 'false');
@@ -272,31 +269,88 @@ function initFaqAccordion() {
 }
 
 /* --------------------------------------------------------------------------
-   6. Custom Outfit Requirement Builder Form
+   6. Custom Outfit Requirement Builder Form with Validation
    -------------------------------------------------------------------------- */
 function initEnquiryBuilder() {
   const form = document.getElementById('outfit-enquiry-form');
   if (!form) return;
 
+  const nameInput = document.getElementById('enquiry-customer-name');
+  const phoneInput = document.getElementById('enquiry-customer-phone');
+  const nameError = document.getElementById('name-error');
+  const phoneError = document.getElementById('phone-error');
+
+  const validatePhone = (val) => {
+    // Allows 10 digit Indian number with optional +91 or leading 0
+    const cleaned = val.replace(/[\s-]/g, '');
+    return /^(?:\+?91)?[6-9]\d{9}$/.test(cleaned);
+  };
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+    let isValid = true;
+
+    // Validate Name
+    const nameVal = nameInput?.value.trim() || '';
+    if (nameVal.length < 2) {
+      nameInput?.classList.add('has-error');
+      if (nameError) nameError.classList.add('visible');
+      isValid = false;
+    } else {
+      nameInput?.classList.remove('has-error');
+      if (nameError) nameError.classList.remove('visible');
+    }
+
+    // Validate Phone
+    const phoneVal = phoneInput?.value.trim() || '';
+    if (!validatePhone(phoneVal)) {
+      phoneInput?.classList.add('has-error');
+      if (phoneError) phoneError.classList.add('visible');
+      isValid = false;
+    } else {
+      phoneInput?.classList.remove('has-error');
+      if (phoneError) phoneError.classList.remove('visible');
+    }
+
+    if (!isValid) {
+      const firstInvalid = form.querySelector('.has-error');
+      firstInvalid?.focus();
+      return;
+    }
 
     const outfitType = document.getElementById('enquiry-outfit-type')?.value || 'Custom Outfit';
-    const occasion = document.getElementById('enquiry-occasion')?.value || 'Upcoming Celebration';
-    const fabric = document.getElementById('enquiry-fabric')?.value || 'Not specified';
-    const notes = document.getElementById('enquiry-notes')?.value || 'None';
+    const occasion = document.getElementById('enquiry-occasion')?.value.trim() || 'Upcoming Celebration';
+    const fabric = document.getElementById('enquiry-fabric')?.value.trim() || 'Not specified';
+    const notes = document.getElementById('enquiry-notes')?.value.trim() || 'None';
 
     const message = [
       `Hello Sparkle & Stitch Gallery, I would like to enquire about custom stitching:`,
-      `• Outfit Type: ${outfitType}`,
-      `• Occasion / Date: ${occasion}`,
-      `• Fabric Preference: ${fabric}`,
-      `• Special Notes: ${notes}`,
+      `• Name: ${nameVal}`,
+      `• WhatsApp Number: ${phoneVal}`,
+      `• Outfit Category: ${outfitType}`,
+      `• Occasion / Event Date: ${occasion}`,
+      `• Fabric Details: ${fabric}`,
+      `• Preferred Design / Notes: ${notes}`,
       `Please let me know consultation availability and details.`
     ].join('\n');
 
     const waUrl = getWhatsAppUrl(message);
     window.open(waUrl, '_blank', 'noopener,noreferrer');
+  });
+
+  // Clear errors on input
+  nameInput?.addEventListener('input', () => {
+    if (nameInput.value.trim().length >= 2) {
+      nameInput.classList.remove('has-error');
+      nameError?.classList.remove('visible');
+    }
+  });
+
+  phoneInput?.addEventListener('input', () => {
+    if (validatePhone(phoneInput.value.trim())) {
+      phoneInput.classList.remove('has-error');
+      phoneError?.classList.remove('visible');
+    }
   });
 }
 
